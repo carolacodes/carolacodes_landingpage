@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import "./styles/animations.css";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  overscroll-behavior: none;
+  background: #00171f;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
