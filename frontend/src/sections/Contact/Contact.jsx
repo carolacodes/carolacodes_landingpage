@@ -1,7 +1,14 @@
 import { useLanguage } from "../../hooks/useLanguage";
-
+import { createWhatsAppUrl } from "../../utils/whatsapp";
+import { getCalUrl } from "../../utils/cal";
 function Contact() {
   const { t } = useLanguage();
+
+  const whatsappUrl = createWhatsAppUrl(
+    "5493794404000",
+    t.contact.whatsapp.message
+  );
+  const calUrl = getCalUrl();
 
   return (
     <section
@@ -89,7 +96,7 @@ function Contact() {
 
             <a
               className="inline-flex items-center justify-center gap-2 w-full py-4 px-6 rounded-full bg-[#1DF2F8] text-[#00171F] font-bold text-sm shadow-[0_0_24px_rgba(29,242,248,0.5)] hover:shadow-[0_0_32px_rgba(29,242,248,0.8)] hover:scale-105 hover:-translate-y-0.5 transition-all"
-              href="https://cal.com"
+              href={calUrl}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -121,7 +128,7 @@ function Contact() {
 
             <a
               className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all hover:scale-105"
-              href="https://wa.me/"
+              href={whatsappUrl}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -140,9 +147,9 @@ function Contact() {
             {t.contact.emailPrefix}{" "}
             <a
               className="font-semibold text-[#1DF2F8] underline underline-offset-4 decoration-[#1DF2F8]/40 hover:text-white transition-colors"
-              href="mailto:contacto@carolacodes.com"
+              href="mailto:carolacodes@gmail.com" target="_blank"
             >
-              contacto@carolacodes.com
+              carolacodes@gmail.com
             </a>
           </p>
         </div>

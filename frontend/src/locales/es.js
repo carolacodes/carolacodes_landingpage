@@ -60,7 +60,7 @@ hero: {
     title: "Todo conectado",
 
     description:
-      "WhatsApp, formularios, pasarelas de pago, CRM, bases de datos y sistemas legados trabajando en conjunto en tiempo real, sin silos desconectados ni datos duplicados.",
+      "WhatsApp, formularios, pasarelas de pago, CRM, bases de datos y sistemas legacy trabajando en conjunto en tiempo real, sin silos desconectados ni datos duplicados.",
 
     diagramTitle: "Núcleo sincronizado",
     diagramResult: "Sin pérdida de leads",
@@ -425,6 +425,9 @@ hero: {
       "¿Tenés una duda puntual o preferís un contacto directo e inmediato? Escribime un mensaje y te respondo en el día de forma personalizada.",
 
     button: "Escribirme al WhatsApp",
+
+    message: 
+      "Hola Carola, vi tu web de CarolaCodes y me gustaría contarte una idea/problema que quiero resolver con software. ¿Podemos hablar?",
   },
 
   emailPrefix:
@@ -437,9 +440,9 @@ footer: {
 
   contactTitle: "Contacto Directo",
 
-  whatsapp: "WhatsApp: +54 9 11 0000-0000",
+  whatsapp: "WhatsApp: +54 9 3794 404000",
 
-  schedule: "Horario: Lun - Vie 09:00 - 18:00 ART",
+  schedule: "Horario: Lun - Vie 09:00 - 22:00 ART",
 
   socialTitle: "Redes & Conexión",
 
@@ -449,6 +452,84 @@ footer: {
 
   privacy: "Privacidad",
 },
+
+legal: {
+  terms: {
+    title: "Términos y condiciones",
+
+    intro:
+      "Al utilizar este sitio web aceptás los siguientes términos y condiciones.",
+
+    sections: [
+      {
+        title: "Uso del sitio",
+        text:
+          "Este sitio tiene fines informativos y comerciales relacionados con los servicios ofrecidos por CarolaCodes.",
+      },
+      {
+        title: "Servicios",
+        text:
+          "Los alcances, tiempos, precios y condiciones de cada proyecto se acuerdan de forma individual antes de comenzar cualquier trabajo.",
+      },
+      {
+        title: "Propiedad intelectual",
+        text:
+          "El contenido, diseño y materiales de este sitio pertenecen a CarolaCodes salvo que se indique lo contrario.",
+      },
+      {
+        title: "Limitación de responsabilidad",
+        text:
+          "La información publicada en este sitio es de carácter general y no constituye una garantía sobre resultados específicos.",
+      },
+      {
+        title: "Cambios",
+        text:
+          "Estos términos pueden actualizarse cuando sea necesario.",
+      },
+    ],
+  },
+
+  privacy: {
+    title: "Política de privacidad",
+
+    intro:
+      "La privacidad de las personas que visitan este sitio es importante para CarolaCodes.",
+
+    sections: [
+      {
+        title: "Información recopilada",
+        text:
+          "Solo se recopila la información que la persona decide enviar voluntariamente mediante formularios, correo electrónico, WhatsApp o herramientas de reserva.",
+      },
+      {
+        title: "Uso de la información",
+        text:
+          "Los datos recibidos se utilizan únicamente para responder consultas, evaluar proyectos y brindar los servicios solicitados.",
+      },
+      {
+        title: "Compartir información",
+        text:
+          "La información personal no se vende ni se comparte con terceros salvo cuando sea necesario para brindar un servicio solicitado.",
+      },
+      {
+        title: "Herramientas externas",
+        text:
+          "Este sitio puede utilizar servicios externos como WhatsApp, Cal.com o herramientas de formularios, que cuentan con sus propias políticas de privacidad.",
+      },
+      {
+        title: "Contacto",
+        text:
+          "Para consultas relacionadas con privacidad podés escribir a carolacodes@gmail.com.",
+      },
+    ],
+  },
+},
+floating: {
+  formTitle: "¿Tenés una idea?",
+  formText: "Contame tu proyecto en 3 minutos",
+},
 };
+
+
 
 export default es;

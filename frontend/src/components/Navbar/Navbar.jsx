@@ -1,9 +1,17 @@
 import { useState } from "react";
 import { useLanguage } from "../../hooks/useLanguage";
+import { createWhatsAppUrl } from "../../utils/whatsapp";
+import { getCalUrl } from "../../utils/cal";
 
 function Navbar() {
   const { t, language, toggleLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const whatsappUrl = createWhatsAppUrl(
+    "5493794404000",
+    t.contact.whatsapp.message
+  );
+  const calUrl = getCalUrl();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#00171F]/80 backdrop-blur-xl border-b border-white/[0.08]">
@@ -93,7 +101,7 @@ function Navbar() {
         <div className="flex items-center gap-3">
           <a
             className="hidden sm:inline-flex items-center justify-center h-10 px-5 rounded-full bg-white/[0.06] border border-white/10 text-slate-200 text-sm font-semibold hover:bg-white/[0.12] hover:text-white transition-all"
-            href="https://wa.me/"
+            href={whatsappUrl}
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -102,7 +110,7 @@ function Navbar() {
 
           <a
             className="hidden md:inline-flex items-center justify-center h-10 px-6 rounded-full bg-[#1DF2F8] text-[#00171F] font-semibold text-sm shadow-[0_0_24px_-2px_rgba(29,242,248,0.5)] hover:shadow-[0_0_32px_0px_rgba(29,242,248,0.75)] hover:-translate-y-0.5 transition-all"
-            href="#contacto"
+            href={calUrl}
           >
             {t.navbar.call}
           </a>

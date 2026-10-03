@@ -1,8 +1,9 @@
 import { useLanguage } from "../../hooks/useLanguage";
-
+import { getCalUrl } from "../../utils/cal";
 function Hero() {
   const { t } = useLanguage();
 
+  const calUrl = getCalUrl();
   return (
     <section className="w-full bg-[#00171F] relative overflow-hidden py-20 lg:py-28">
       {/* Animated Aurora */}
@@ -42,7 +43,7 @@ function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full sm:w-auto">
           <a
             className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#1DF2F8] text-[#00171F] font-bold text-sm shadow-lg shadow-cyan-500/20 hover:scale-105 hover:shadow-[0_0_36px_0px_rgba(29,242,248,0.75)] hover:-translate-y-0.5 transition-all group"
-            href="#contacto"
+            href="https://docs.google.com/forms/u/0/" target="_blank"
           >
             <span>{t.hero.primaryCta}</span>
 
@@ -53,7 +54,7 @@ function Hero() {
 
           <a
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/[0.06] border border-white/20 text-white font-medium text-sm hover:bg-white/10 hover:scale-105 hover:-translate-y-0.5 transition-all"
-            href="#contacto"
+            href={calUrl} target="_blank"
           >
             <span className="material-symbols-outlined text-[18px] text-[#1DF2F8]">
               calendar_today

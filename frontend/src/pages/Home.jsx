@@ -7,6 +7,7 @@ import Solutions from "../sections/Solutions/Solutions";
 import Process from "../sections/Process/Process";
 import Industries from "../sections/Industries/Industries";
 import Contact from "../sections/Contact/Contact";
+import FloatingActions from "../components/FloatingActions/FloatingActions";
 
 function Home() {
   return (
@@ -23,6 +24,7 @@ function Home() {
       </main>
 
       <Footer />
+      <FloatingActions />
     </>
   );
 }

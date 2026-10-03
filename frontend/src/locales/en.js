@@ -425,6 +425,9 @@ hero: {
       "Have a quick question or prefer direct contact? Send me a message and I'll reply personally during the day.",
 
     button: "Message me on WhatsApp",
+    
+    message: 
+      "Hi Carola, I found your CarolaCodes website and I'd like to tell you about an idea/problem I want to solve with software. Can we talk?",
   },
 
   emailPrefix:
@@ -437,9 +440,9 @@ footer: {
 
   contactTitle: "Direct Contact",
 
-  whatsapp: "WhatsApp: +54 9 11 0000-0000",
+  whatsapp: "WhatsApp: +54 9 3794 404000",
 
-  schedule: "Hours: Mon - Fri 09:00 - 18:00 ART",
+  schedule: "Hours: Mon - Fri 09:00 - 22:00 ART",
 
   socialTitle: "Social & Connect",
 
@@ -448,6 +451,82 @@ footer: {
   terms: "Terms",
 
   privacy: "Privacy",
+},
+
+legal: {
+  terms: {
+    title: "Terms and Conditions",
+
+    intro:
+      "By using this website, you agree to the following terms and conditions.",
+
+    sections: [
+      {
+        title: "Use of the website",
+        text:
+          "This website is intended for informational and commercial purposes related to the services offered by CarolaCodes.",
+      },
+      {
+        title: "Services",
+        text:
+          "The scope, timelines, pricing and conditions of each project are agreed individually before any work begins.",
+      },
+      {
+        title: "Intellectual property",
+        text:
+          "The content, design and materials on this website belong to CarolaCodes unless otherwise stated.",
+      },
+      {
+        title: "Limitation of liability",
+        text:
+          "The information published on this website is general in nature and does not guarantee specific results.",
+      },
+      {
+        title: "Changes",
+        text:
+          "These terms may be updated when necessary.",
+      },
+    ],
+  },
+
+  privacy: {
+    title: "Privacy Policy",
+
+    intro:
+      "The privacy of people who visit this website is important to CarolaCodes.",
+
+    sections: [
+      {
+        title: "Information collected",
+        text:
+          "Only information voluntarily submitted through forms, email, WhatsApp or booking tools is collected.",
+      },
+      {
+        title: "How information is used",
+        text:
+          "The information received is used only to respond to inquiries, evaluate projects and provide requested services.",
+      },
+      {
+        title: "Sharing information",
+        text:
+          "Personal information is not sold or shared with third parties unless it is necessary to provide a requested service.",
+      },
+      {
+        title: "External tools",
+        text:
+          "This website may use external services such as WhatsApp, Cal.com or form tools, which have their own privacy policies.",
+      },
+      {
+        title: "Contact",
+        text:
+          "For privacy-related questions, you can contact carolacodes@gmail.com.",
+      },
+    ],
+  },
+},
+floating: {
+  formTitle: "Have an idea?",
+  formText: "Tell me about your project in 3 minutes",
 },
 };
 

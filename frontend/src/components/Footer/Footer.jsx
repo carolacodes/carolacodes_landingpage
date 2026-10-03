@@ -1,7 +1,17 @@
 import { useLanguage } from "../../hooks/useLanguage";
+import { createWhatsAppUrl } from "../../utils/whatsapp";
+import LegalModal from "../LegalModal/LegalModal";
+import { useState } from "react";
 
 function Footer() {
   const { t } = useLanguage();
+
+  const whatsappUrl = createWhatsAppUrl(
+    "5493794404000",
+    t.contact.whatsapp.message
+  );
+
+  const [legalModal, setLegalModal] = useState(null);
 
   return (
     <footer className="w-full bg-[#001015] border-t border-white/[0.08] text-slate-400 py-16">
@@ -29,14 +39,14 @@ function Footer() {
 
             <a
               className="text-sm text-slate-200 hover:text-[#1DF2F8] transition-colors"
-              href="mailto:hola@carolacodes.com"
+              href="mailto:carolacodes@gmail.com"
             >
-              hola@carolacodes.com
+              carolacodes@gmail.com
             </a>
 
             <a
               className="text-sm text-slate-400 hover:text-[#1DF2F8] transition-colors"
-              href="https://wa.me/"
+              href={whatsappUrl}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -57,7 +67,7 @@ function Footer() {
             <div className="flex flex-col gap-2">
               <a
                 className="text-sm text-slate-400 hover:text-white transition-colors"
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/carola-cardozo/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -66,20 +76,11 @@ function Footer() {
 
               <a
                 className="text-sm text-slate-400 hover:text-white transition-colors"
-                href="https://instagram.com"
+                href="https://www.instagram.com/carolacodes/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 Instagram
-              </a>
-
-              <a
-                className="text-sm text-slate-400 hover:text-white transition-colors"
-                href="https://github.com"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                GitHub
               </a>
             </div>
           </div>
@@ -92,16 +93,57 @@ function Footer() {
           </p>
 
           <div className="flex items-center gap-6">
-            <span className="hover:text-white cursor-pointer transition-colors">
+            <button
+              onClick={() => setLegalModal("terms")}
+              className="hover:text-white cursor-pointer transition-colors"
+            >
               {t.footer.terms}
-            </span>
+            </button>
 
-            <span className="hover:text-white cursor-pointer transition-colors">
+            <button
+              onClick={() => setLegalModal("privacy")}
+              className="hover:text-white cursor-pointer transition-colors"
+            >
               {t.footer.privacy}
-            </span>
+            </button>
           </div>
         </div>
       </div>
+
+      <LegalModal
+  isOpen={legalModal === "terms"}
+  onClose={() => setLegalModal(null)}
+  title={t.legal.terms.title}
+>
+  <div className="space-y-5">
+    <p>{t.legal.terms.intro}</p>
+
+    {t.legal.terms.sections.map((section) => (
+      <div key={section.title}>
+        <h3 className="font-semibold text-white">{section.title}</h3>
+        <p className="mt-2">{section.text}</p>
+      </div>
+    ))}
+  </div>
+      </LegalModal>
+
+      <LegalModal
+        isOpen={legalModal === "privacy"}
+        onClose={() => setLegalModal(null)}
+        title={t.legal.privacy.title}
+      >
+        <div className="space-y-5">
+          <p>{t.legal.privacy.intro}</p>
+
+          {t.legal.privacy.sections.map((section) => (
+            <div key={section.title}>
+              <h3 className="font-semibold text-white">{section.title}</h3>
+              <p className="mt-2">{section.text}</p>
+            </div>
+          ))}
+        </div>
+      </LegalModal>
+
     </footer>
   );
 }
