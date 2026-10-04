@@ -43,7 +43,9 @@ function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full sm:w-auto">
           <a
             className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#1DF2F8] text-[#00171F] font-bold text-sm shadow-lg shadow-cyan-500/20 hover:scale-105 hover:shadow-[0_0_36px_0px_rgba(29,242,248,0.75)] hover:-translate-y-0.5 transition-all group"
-            href="https://docs.google.com/forms/u/0/" target="_blank"
+            href="/diagnostico"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span>{t.hero.primaryCta}</span>
 

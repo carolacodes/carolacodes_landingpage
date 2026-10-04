@@ -528,6 +528,134 @@ floating: {
   formTitle: "¿Tenés una idea?",
   formText: "Contame tu proyecto en 3 minutos",
 },
+
+projectForm: {
+  progress: {
+    step: "Paso",
+    of: "de",
+  },
+  headerTitle: "Contame tu proyecto",
+  headerDescription:
+  "No hace falta que tengas la solución definida. Contame cómo trabajás hoy y qué querés mejorar.",
+  navigation: {
+    previous: "Atrás",
+    next: "Continuar",
+    submit: "Enviar proyecto",
+    sending: "Enviando...",
+  },
+
+  contact: {
+    title: "Primero, contame un poco sobre vos",
+    description:
+      "Estos datos me permiten saber con quién estoy hablando y cómo contactarte.",
+
+    name: "Nombre",
+    email: "Email",
+    whatsapp: "WhatsApp (opcional)",
+    business: "Negocio, empresa o proyecto (opcional)",
+  },
+
+  problem: {
+    title: "¿Qué querés resolver?",
+
+    description:
+      "No hace falta que sepas qué tecnología necesitás. Contame el problema o la idea.",
+
+    placeholder:
+      "Ej: recibimos muchas consultas por WhatsApp y actualmente una persona tiene que clasificarlas manualmente...",
+  },
+
+  currentProcess: {
+    title: "¿Cómo lo resolvés hoy?",
+
+    description:
+      "Quiero entender cómo funciona actualmente el proceso antes de pensar en una solución.",
+
+    placeholder:
+      "Ej: recibimos los mensajes, copiamos los datos a una planilla y después alguien hace seguimiento manual...",
+  },
+
+  solution: {
+    title: "¿Qué pensás que necesitás?",
+
+    description:
+      "Podés elegir más de una opción. Si no estás seguro, no hay problema.",
+
+    options: {
+      customSoftware: "Una aplicación o sistema propio",
+      automation: "Automatizar tareas o procesos",
+      integrations: "Conectar herramientas existentes",
+      ai: "Aplicar inteligencia artificial",
+      webPlatform: "Una web o plataforma",
+      notSure: "No estoy seguro todavía",
+    },
+  },
+
+  stage: {
+    title: "Últimos detalles",
+
+    description:
+      "Esto me ayuda a entender qué tan avanzado está el proyecto.",
+
+    question: "¿En qué etapa estás?",
+
+    options: {
+      idea: "Solo tengo una idea",
+      definedProcess: "Ya tengo el proceso definido",
+      existingTools:
+        "Ya uso herramientas pero quiero mejorarlas",
+      existingSystem:
+        "Ya existe un sistema y necesito modificarlo",
+    },
+  },
+
+  budget: {
+    question: "¿Tenés un presupuesto estimado?",
+
+    options: {
+      unknown: "Todavía no lo sé",
+      under500: "Menos de USD 500",
+      from500to1000: "USD 500 – 1.000",
+      from1000to3000: "USD 1.000 – 3.000",
+      over3000: "USD 3.000+",
+      preferToDiscuss: "Prefiero hablarlo",
+    },
+  },
+
+  errors: {
+    name: "Ingresá tu nombre.",
+    email: "Ingresá tu email.",
+    invalidEmail: "Ingresá un email válido.",
+
+    problem:
+      "Contame un poco más sobre lo que querés resolver.",
+
+    currentProcess:
+      "Contame brevemente cómo funciona hoy el proceso.",
+
+    solutionTypes:
+      "Seleccioná al menos una opción.",
+
+    projectStage:
+      "Seleccioná el estado del proyecto.",
+
+    budget:
+      "Seleccioná una opción de presupuesto.",
+
+    submit:
+      "No pudimos enviar la consulta. Intentá nuevamente.",
+  },
+
+  success: {
+    title: "¡Recibí tu consulta!",
+
+    description:
+      "Voy a revisar lo que me contaste y te voy a responder dentro de las próximas 24 horas hábiles.",
+
+    newForm: "Enviar otra consulta",
+  },
+},
+
 };
 
 

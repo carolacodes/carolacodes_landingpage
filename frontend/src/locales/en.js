@@ -528,6 +528,134 @@ floating: {
   formTitle: "Have an idea?",
   formText: "Tell me about your project in 3 minutes",
 },
+
+projectForm: {
+  progress: {
+    step: "Step",
+    of: "of",
+  },
+  headerTitle: "Tell me about your project",
+  headerDescription:
+  "You don't need to have the solution figured out. Tell me how you work today and what you want to improve.",
+  navigation: {
+    previous: "Back",
+    next: "Continue",
+    submit: "Send project",
+    sending: "Sending...",
+  },
+
+  contact: {
+    title: "First, tell me a little about yourself",
+
+    description:
+      "These details help me understand who I'm talking to and how to contact you.",
+
+    name: "Name",
+    email: "Email",
+    whatsapp: "WhatsApp (optional)",
+    business: "Business, company or project (optional)",
+  },
+
+  problem: {
+    title: "What do you want to solve?",
+
+    description:
+      "You don't need to know what technology you need. Just tell me about the problem or idea.",
+
+    placeholder:
+      "Example: we receive many inquiries through WhatsApp and someone currently has to classify them manually...",
+  },
+
+  currentProcess: {
+    title: "How do you handle it today?",
+
+    description:
+      "I want to understand how the process currently works before thinking about a solution.",
+
+    placeholder:
+      "Example: we receive the messages, copy the information into a spreadsheet and someone follows up manually...",
+  },
+
+  solution: {
+    title: "What do you think you need?",
+
+    description:
+      "You can select more than one option. If you're not sure, that's completely fine.",
+
+    options: {
+      customSoftware: "A custom application or system",
+      automation: "Automate tasks or processes",
+      integrations: "Connect existing tools",
+      ai: "Apply artificial intelligence",
+      webPlatform: "A website or platform",
+      notSure: "I'm not sure yet",
+    },
+  },
+
+  stage: {
+    title: "A few final details",
+
+    description:
+      "This helps me understand how far along the project is.",
+
+    question: "What stage is your project in?",
+
+    options: {
+      idea: "I only have an idea",
+      definedProcess: "I already have the process defined",
+      existingTools:
+        "I already use tools but want to improve them",
+      existingSystem:
+        "A system already exists and needs changes",
+    },
+  },
+
+  budget: {
+    question: "Do you have an estimated budget?",
+
+    options: {
+      unknown: "I don't know yet",
+      under500: "Under USD 500",
+      from500to1000: "USD 500 – 1,000",
+      from1000to3000: "USD 1,000 – 3,000",
+      over3000: "USD 3,000+",
+      preferToDiscuss: "I'd rather discuss it",
+    },
+  },
+
+  errors: {
+    name: "Enter your name.",
+    email: "Enter your email.",
+    invalidEmail: "Enter a valid email.",
+
+    problem:
+      "Tell me a little more about what you want to solve.",
+
+    currentProcess:
+      "Briefly describe how the process works today.",
+
+    solutionTypes:
+      "Select at least one option.",
+
+    projectStage:
+      "Select the current project stage.",
+
+    budget:
+      "Select a budget option.",
+
+    submit:
+      "The request couldn't be sent. Please try again.",
+  },
+
+  success: {
+    title: "I received your project!",
+
+    description:
+      "I'll review what you shared and get back to you within the next 24 business hours.",
+
+    newForm: "Send another request",
+  },
+},
 };
 
 export default en;

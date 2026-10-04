@@ -60,9 +60,9 @@ function Contact() {
 
             <a
               className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all hover:scale-105"
-              href="https://forms.google.com"
-              rel="noopener noreferrer"
+              href="/diagnostico"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <span>{t.contact.diagnostic.button}</span>
 
