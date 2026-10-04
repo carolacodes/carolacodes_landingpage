@@ -519,7 +519,7 @@ legal: {
       {
         title: "Contacto",
         text:
-          "Para consultas relacionadas con privacidad podés escribir a carolacodes@gmail.com.",
+          "Para consultas relacionadas con privacidad podés escribir a hola@carolacodes.com.",
       },
     ],
   },

@@ -1,4 +1,5 @@
 import { resend } from "../libs/resend.js";
+import { escapeHtml } from "../utils/escapeHtml.js";
 
 export const sendNewLeadEmail = async (contact) => {
   const {
@@ -15,59 +16,329 @@ export const sendNewLeadEmail = async (contact) => {
     created_at,
   } = contact;
 
+  // Datos sanitizados
+  const safeName = escapeHtml(name);
+  const safeEmail = escapeHtml(email);
+  const safeWhatsapp = escapeHtml(
+    whatsapp || "No informado"
+  );
+  const safeBusiness = escapeHtml(
+    business || "No informado"
+  );
+  const safeProblem = escapeHtml(problem);
+  const safeCurrentProcess = escapeHtml(
+    current_process
+  );
+
+  const safeSolutionTypes = Array.isArray(
+    solution_types
+  )
+    ? solution_types
+        .map((item) => escapeHtml(item))
+        .join(", ")
+    : "";
+
+  const safeProjectStage =
+    escapeHtml(project_stage);
+
+  const safeBudget = escapeHtml(budget);
+  const safeLanguage = escapeHtml(language);
+
+  const safeCreatedAt = created_at
+    ? new Date(created_at).toLocaleString("es-AR")
+    : "No informado";
+
   const { data, error } = await resend.emails.send({
-    from: "CarolaCodes <onboarding@resend.dev>",
+    from: "CarolaCodes <hola@carolacodes.com>",
+
     to: [process.env.CONTACT_EMAIL],
-    subject: `Nuevo lead de CarolaCodes — ${name}`,
+
+    subject: `Nuevo lead de CarolaCodes — ${safeName}`,
 
     html: `
-      <div style="font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto; color: #00171f;">
-        <h1 style="font-size: 24px; margin-bottom: 8px;">
-          Nuevo contacto desde CarolaCodes
-        </h1>
+      <div style="
+        margin: 0;
+        padding: 40px 20px;
+        background: #f8fafc;
+        font-family: Inter, Arial, sans-serif;
+      ">
 
-        <p style="color: #475569; margin-bottom: 24px;">
-          Se recibió una nueva consulta desde el formulario de la web.
-        </p>
+        <div style="
+          max-width: 680px;
+          margin: 0 auto;
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
+          border-radius: 24px;
+          overflow: hidden;
+          box-shadow: 0 20px 50px rgba(0, 23, 31, 0.08);
+        ">
 
-        <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
+          <!-- Header -->
+          <div style="
+            padding: 28px 32px;
+            background: #00171F;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+          ">
+            <div style="
+              font-size: 24px;
+              font-weight: 800;
+              color: #ffffff;
+              letter-spacing: -0.02em;
+            ">
+              Carola<span style="color:#1DF2F8;">Codes</span>
+            </div>
+          </div>
 
-        <h2 style="font-size: 18px;">Datos de contacto</h2>
+          <!-- Content -->
+          <div style="padding: 36px 32px;">
 
-        <p><strong>Nombre:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>WhatsApp:</strong> ${whatsapp || "No informado"}</p>
-        <p><strong>Negocio / proyecto:</strong> ${business || "No informado"}</p>
+            <div style="
+              display: inline-block;
+              padding: 7px 12px;
+              border-radius: 999px;
+              background: #e8fbfd;
+              color: #007EA7;
+              font-size: 11px;
+              font-weight: 700;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              margin-bottom: 20px;
+            ">
+              NUEVO LEAD
+            </div>
 
-        <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
+            <h1 style="
+              margin: 0;
+              font-size: 28px;
+              line-height: 1.2;
+              color: #00171F;
+              letter-spacing: -0.03em;
+            ">
+              Nueva consulta desde CarolaCodes
+            </h1>
 
-        <h2 style="font-size: 18px;">Proyecto</h2>
+            <p style="
+              margin: 14px 0 0 0;
+              color: #64748b;
+              font-size: 15px;
+              line-height: 1.7;
+            ">
+              Se recibió una nueva consulta desde el formulario de diagnóstico.
+            </p>
 
-        <p><strong>Problema:</strong></p>
-        <p style="color: #334155;">${problem}</p>
+            <div style="
+              margin: 28px 0;
+              border-top: 1px solid #e2e8f0;
+            "></div>
 
-        <p><strong>Proceso actual:</strong></p>
-        <p style="color: #334155;">${current_process}</p>
+            <!-- Contact data -->
+            <h2 style="
+              margin: 0 0 18px 0;
+              font-size: 18px;
+              color: #00171F;
+            ">
+              Datos de contacto
+            </h2>
 
-        <p><strong>Tipo de solución:</strong> ${solution_types.join(", ")}</p>
-        <p><strong>Estado del proyecto:</strong> ${project_stage}</p>
-        <p><strong>Presupuesto:</strong> ${budget}</p>
-        <p><strong>Idioma:</strong> ${language}</p>
-        <p><strong>Fecha:</strong> ${new Date(created_at).toLocaleString("es-AR")}</p>
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              width="100%"
+              style="
+                border-collapse: collapse;
+                font-size: 14px;
+                color: #334155;
+              "
+            >
+              <tr>
+                <td style="padding: 8px 0; font-weight: 700;">
+                  Nombre
+                </td>
+                <td style="padding: 8px 0;">
+                  ${safeName}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding: 8px 0; font-weight: 700;">
+                  Email
+                </td>
+                <td style="padding: 8px 0;">
+                  ${safeEmail}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding: 8px 0; font-weight: 700;">
+                  WhatsApp
+                </td>
+                <td style="padding: 8px 0;">
+                  ${safeWhatsapp}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding: 8px 0; font-weight: 700;">
+                  Negocio / proyecto
+                </td>
+                <td style="padding: 8px 0;">
+                  ${safeBusiness}
+                </td>
+              </tr>
+            </table>
+
+            <div style="
+              margin: 28px 0;
+              border-top: 1px solid #e2e8f0;
+            "></div>
+
+            <!-- Project -->
+            <h2 style="
+              margin: 0 0 18px 0;
+              font-size: 18px;
+              color: #00171F;
+            ">
+              Proyecto
+            </h2>
+
+            <p style="
+              margin: 0 0 8px 0;
+              font-weight: 700;
+              color: #00171F;
+            ">
+              Problema
+            </p>
+
+            <div style="
+              padding: 16px;
+              border-radius: 14px;
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              color: #475569;
+              font-size: 14px;
+              line-height: 1.7;
+              margin-bottom: 20px;
+            ">
+              ${safeProblem}
+            </div>
+
+            <p style="
+              margin: 0 0 8px 0;
+              font-weight: 700;
+              color: #00171F;
+            ">
+              Proceso actual
+            </p>
+
+            <div style="
+              padding: 16px;
+              border-radius: 14px;
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              color: #475569;
+              font-size: 14px;
+              line-height: 1.7;
+              margin-bottom: 20px;
+            ">
+              ${safeCurrentProcess}
+            </div>
+
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              width="100%"
+              style="
+                border-collapse: collapse;
+                font-size: 14px;
+                color: #334155;
+              "
+            >
+              <tr>
+                <td style="padding: 8px 0; font-weight: 700;">
+                  Tipo de solución
+                </td>
+                <td style="padding: 8px 0;">
+                  ${safeSolutionTypes}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding: 8px 0; font-weight: 700;">
+                  Estado del proyecto
+                </td>
+                <td style="padding: 8px 0;">
+                  ${safeProjectStage}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding: 8px 0; font-weight: 700;">
+                  Presupuesto
+                </td>
+                <td style="padding: 8px 0;">
+                  ${safeBudget}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding: 8px 0; font-weight: 700;">
+                  Idioma
+                </td>
+                <td style="padding: 8px 0;">
+                  ${safeLanguage}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding: 8px 0; font-weight: 700;">
+                  Fecha
+                </td>
+                <td style="padding: 8px 0;">
+                  ${safeCreatedAt}
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Footer -->
+          <div style="
+            padding: 20px 32px;
+            background: #00171F;
+            color: #64748b;
+            font-size: 11px;
+          ">
+            CarolaCodes · hola@carolacodes.com
+          </div>
+        </div>
       </div>
     `,
   });
 
   if (error) {
-    console.error("Error enviando email interno:", error);
-    throw new Error("No se pudo enviar el email del nuevo lead");
+    console.error(
+      "Error enviando email interno:",
+      error
+    );
+
+    throw new Error(
+      "No se pudo enviar el email del nuevo lead"
+    );
   }
 
   return data;
 };
 
-export const sendClientConfirmationEmail = async (contact) => {
-  const { name, email, language } = contact;
+export const sendClientConfirmationEmail = async (
+  contact
+) => {
+  const {
+    name,
+    email,
+    language,
+  } = contact;
+
+  const safeName = escapeHtml(name);
+  const safeEmail = escapeHtml(email);
 
   const isEnglish = language === "en";
 
@@ -76,8 +347,8 @@ export const sendClientConfirmationEmail = async (contact) => {
     : "Recibí tu consulta — CarolaCodes";
 
   const title = isEnglish
-    ? `Thanks, ${name}. I received your project.`
-    : `Gracias, ${name}. Recibí tu consulta.`;
+    ? `Thanks, ${safeName}. I received your project.`
+    : `Gracias, ${safeName}. Recibí tu consulta.`;
 
   const description = isEnglish
     ? "I’ll review what you shared and get back to you within the next 24 business hours."
@@ -95,9 +366,15 @@ export const sendClientConfirmationEmail = async (contact) => {
     ? "Software, automation and practical AI for real business problems."
     : "Software, automatización e IA aplicada para resolver problemas reales.";
 
+  const badgeText = isEnglish
+    ? "PROJECT RECEIVED"
+    : "CONSULTA RECIBIDA";
+
   const { data, error } = await resend.emails.send({
-    from: "CarolaCodes <onboarding@resend.dev>",
-    to: [email],
+    from: "CarolaCodes <hola@carolacodes.com>",
+
+    to: [safeEmail],
+
     subject,
 
     html: `
@@ -107,6 +384,7 @@ export const sendClientConfirmationEmail = async (contact) => {
         background: #001015;
         font-family: Inter, Arial, sans-serif;
       ">
+
         <div style="
           max-width: 620px;
           margin: 0 auto;
@@ -117,6 +395,7 @@ export const sendClientConfirmationEmail = async (contact) => {
           box-shadow: 0 20px 60px rgba(0,0,0,0.35);
         ">
 
+          <!-- Header -->
           <div style="
             padding: 28px 32px;
             border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -131,7 +410,11 @@ export const sendClientConfirmationEmail = async (contact) => {
             </div>
           </div>
 
-          <div style="padding: 40px 32px 36px 32px;">
+          <!-- Content -->
+          <div style="
+            padding: 40px 32px 36px 32px;
+          ">
+
             <div style="
               display: inline-block;
               padding: 7px 12px;
@@ -145,7 +428,7 @@ export const sendClientConfirmationEmail = async (contact) => {
               text-transform: uppercase;
               margin-bottom: 22px;
             ">
-              ${isEnglish ? "PROJECT RECEIVED" : "CONSULTA RECIBIDA"}
+              ${badgeText}
             </div>
 
             <h1 style="
@@ -211,13 +494,14 @@ export const sendClientConfirmationEmail = async (contact) => {
             </p>
           </div>
 
+          <!-- Footer -->
           <div style="
             padding: 20px 32px;
             border-top: 1px solid rgba(255,255,255,0.08);
             color: #64748b;
             font-size: 11px;
           ">
-            CarolaCodes · carolacodes@gmail.com
+            CarolaCodes · hola@carolacodes.com
           </div>
         </div>
       </div>
@@ -225,8 +509,14 @@ export const sendClientConfirmationEmail = async (contact) => {
   });
 
   if (error) {
-    console.error("Error enviando confirmación al cliente:", error);
-    throw new Error("No se pudo enviar el email de confirmación");
+    console.error(
+      "Error enviando confirmación al cliente:",
+      error
+    );
+
+    throw new Error(
+      "No se pudo enviar el email de confirmación"
+    );
   }
 
   return data;

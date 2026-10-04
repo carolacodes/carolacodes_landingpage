@@ -39,9 +39,9 @@ function Footer() {
 
             <a
               className="text-sm text-slate-200 hover:text-[#1DF2F8] transition-colors"
-              href="mailto:carolacodes@gmail.com"
+              href="mailto:hola@carolacodes.com"
             >
-              carolacodes@gmail.com
+              hola@carolacodes.com
             </a>
 
             <a

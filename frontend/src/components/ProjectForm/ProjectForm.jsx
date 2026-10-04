@@ -21,6 +21,9 @@ const INITIAL_FORM_DATA = {
   solutionTypes: [],
   projectStage: "",
   budget: "",
+
+  // Honeypot
+  website: "",
 };
 
 function ProjectForm() {
@@ -138,6 +141,8 @@ function ProjectForm() {
   };
 
   const handleSubmit = async () => {
+    if (status.loading) return;
+
     if (!validateCurrentStep()) return;
 
     setStatus({
@@ -183,6 +188,7 @@ function ProjectForm() {
   };
 
   return (
+    
     <section className="relative overflow-hidden bg-[#00171F] px-4 py-16 sm:px-6 lg:px-8">
       {/* Auroras */}
       <div className="pointer-events-none absolute left-1/2 top-20 h-[520px] w-[700px] -translate-x-1/2 rounded-full bg-[#1DF2F8]/10 blur-[150px] animate-aurora-1" />
@@ -217,6 +223,19 @@ function ProjectForm() {
 
           {/* Content */}
           <div className="px-6 py-8 sm:px-10 sm:py-10">
+            {/* Honeypot anti-spam */}
+              <input
+                type="text"
+                name="website"
+                value={formData.website}
+                onChange={(event) =>
+                  updateField("website", event.target.value)
+                }
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute left-[-9999px] top-[-9999px] h-px w-px opacity-0"
+              />
             {status.success ? (
               <div className="py-10 text-center">
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#1DF2F8]/30 bg-[#1DF2F8]/10 text-[#1DF2F8]">

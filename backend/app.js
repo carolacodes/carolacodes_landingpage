@@ -15,8 +15,17 @@ app.use(
 app.use(helmet());
 app.use(morgan("dev"));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(
+  express.json({
+    limit: "20kb",
+  })
+);
+app.use(
+  express.urlencoded({
+    extended: true,
+    limit: "20kb",
+  })
+);
 
 app.get("/api/health", (req, res) => {
   res.status(200).json({

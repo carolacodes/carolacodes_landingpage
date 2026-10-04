@@ -519,7 +519,7 @@ legal: {
       {
         title: "Contact",
         text:
-          "For privacy-related questions, you can contact carolacodes@gmail.com.",
+          "For privacy-related questions, you can contact hola@carolacodes.com.",
       },
     ],
   },

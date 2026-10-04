@@ -147,9 +147,9 @@ function Contact() {
             {t.contact.emailPrefix}{" "}
             <a
               className="font-semibold text-[#1DF2F8] underline underline-offset-4 decoration-[#1DF2F8]/40 hover:text-white transition-colors"
-              href="mailto:carolacodes@gmail.com" target="_blank"
+              href="mailto:hola@carolacodes.com" target="_blank"
             >
-              carolacodes@gmail.com
+              hola@carolacodes.com
             </a>
           </p>
         </div>

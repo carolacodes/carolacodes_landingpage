@@ -68,4 +68,6 @@ export const contactSchema = z.object({
   ]),
 
   language: z.enum(["es", "en"]).default("es"),
+  // Honeypot
+  website: z.string().optional().default(""),
 });

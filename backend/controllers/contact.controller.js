@@ -15,6 +15,15 @@ export const createContact = async (req, res) => {
 
     const contactData = result.data;
 
+    // Honeypot: si está completo, fingimos que salió bien
+    // pero NO guardamos nada ni enviamos emails.
+    if (contactData.website) {
+      return res.status(200).json({
+        ok: true,
+        message: "Consulta recibida correctamente",
+      });
+    }
+
     const savedContact = await saveContact(contactData);
 
     return res.status(201).json({
