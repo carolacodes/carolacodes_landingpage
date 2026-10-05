@@ -38,8 +38,9 @@ function Footer() {
             </span>
 
             <a
-              className="text-sm text-slate-200 hover:text-[#1DF2F8] transition-colors"
-              href="mailto:hola@carolacodes.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=hola@carolacodes.com"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               hola@carolacodes.com
             </a>

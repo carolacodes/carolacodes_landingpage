@@ -11,11 +11,11 @@ const en = {
 hero: {
   badge: "Independent software studio & technical consulting",
 
-  titleStart: "Software built to solve",
+  titleStart: "Custom software to solve",
   titleHighlight: "real problems.",
 
   description:
-    "I build custom solutions for businesses, entrepreneurs and professionals using software, automation, integrations and practical AI.",
+    "I build custom software, automations, and integrations for businesses, entrepreneurs, and professionals, using applied AI when it actually adds value.",
 
   primaryCta: "Tell me what you want to solve",
   secondaryCta: "Book a call",
@@ -37,10 +37,10 @@ hero: {
 
   services: {
   badge: "Diagnosis & Scope",
-  title: "What I can solve",
+  title: "Software and automation services",
 
   description:
-    "Technology focused on business impact: reducing friction, organizing chaotic information flows and freeing up your team's time.",
+    "I build digital solutions that automate tasks, connect tools, and turn manual processes into systems that work.",
 
   manual: {
     title: "Less manual work",

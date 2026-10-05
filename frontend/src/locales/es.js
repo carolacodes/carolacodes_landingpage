@@ -11,11 +11,11 @@ const es = {
 hero: {
   badge: "Software studio & consultoría técnica independiente",
 
-  titleStart: "Software para resolver",
+  titleStart: "Software a medida para resolver",
   titleHighlight: "problemas reales.",
 
   description:
-    "Desarrollo soluciones a medida para negocios, emprendedores y profesionales mediante software, automatizaciones, integraciones e IA aplicada con criterio práctico.",
+    "Desarrollo software a medida, automatizaciones e integraciones para negocios, emprendedores y profesionales, con soluciones de IA aplicada cuando realmente aportan valor.",
 
   primaryCta: "Contame qué querés resolver",
   secondaryCta: "Agendar una llamada",
@@ -37,10 +37,10 @@ hero: {
 
   services: {
   badge: "Diagnóstico & Alcance",
-  title: "Qué puedo resolver",
+  title: "Servicios de software y automatización",
 
   description:
-    "Tecnología orientada al impacto del negocio: eliminar fricciones, ordenar flujos caóticos de información y liberar el tiempo de tu equipo.",
+    "Construyo soluciones digitales para automatizar tareas, conectar herramientas y convertir procesos manuales en sistemas que funcionan.",
 
   manual: {
     title: "Menos tareas manuales",

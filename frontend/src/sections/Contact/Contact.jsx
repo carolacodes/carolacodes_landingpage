@@ -146,8 +146,9 @@ function Contact() {
           <p className="text-sm sm:text-base text-slate-400">
             {t.contact.emailPrefix}{" "}
             <a
-              className="font-semibold text-[#1DF2F8] underline underline-offset-4 decoration-[#1DF2F8]/40 hover:text-white transition-colors"
-              href="mailto:hola@carolacodes.com" target="_blank"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=hola@carolacodes.com"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               hola@carolacodes.com
             </a>
