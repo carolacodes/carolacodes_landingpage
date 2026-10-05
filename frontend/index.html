@@ -61,8 +61,12 @@
       property="og:site_name"
       content="CarolaCodes"
     />
-    <meta property="og:image" content="https://carolacodes.com/og-image.png" />
-    
+
+    <meta
+      property="og:image"
+      content="https://carolacodes.com/og-image.png"
+    />
+
     <meta
       property="og:locale"
       content="es_AR"
@@ -88,6 +92,53 @@
       name="twitter:image"
       content="https://carolacodes.com/og-image.png"
     />
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://carolacodes.com/#website",
+            "url": "https://carolacodes.com/",
+            "name": "CarolaCodes",
+            "description": "Desarrollo software a medida, automatizaciones e integraciones de IA para negocios, emprendedores y profesionales.",
+            "inLanguage": "es-AR",
+            "publisher": {
+              "@id": "https://carolacodes.com/#person"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carolacodes.com/#person",
+            "name": "Carola Cardozo",
+            "url": "https://carolacodes.com/",
+            "jobTitle": "Software Developer",
+            "sameAs": [
+              "https://www.linkedin.com/in/carola-cardozo",
+              "https://www.instagram.com/carolacodes/"
+            ],
+            "worksFor": {
+              "@id": "https://carolacodes.com/#organization"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://carolacodes.com/#organization",
+            "name": "CarolaCodes",
+            "url": "https://carolacodes.com/",
+            "description": "Desarrollo software a medida, automatizaciones e integraciones de IA para negocios, emprendedores y profesionales.",
+            "knowsAbout": [
+              "Custom software development",
+              "Business process automation",
+              "Software integrations",
+              "Applied artificial intelligence"
+            ]
+          }
+        ]
+      }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

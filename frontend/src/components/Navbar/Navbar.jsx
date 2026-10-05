@@ -84,44 +84,12 @@ function Navbar() {
           onClick={handleHome}
           className="flex items-center gap-3 group"
         >
-          <div className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center p-1.5 shadow-inner transition-transform duration-300 group-hover:scale-105">
-            <svg
-              className="w-full h-full"
-              fill="none"
-              viewBox="0 0 44 44"
-            >
-              <rect
-                fill="#002230"
-                height="44"
-                rx="10"
-                stroke="#00A8E8"
-                strokeWidth="1.5"
-                width="44"
-              />
-
-              <path
-                d="M16 17L10 22L16 27"
-                stroke="#00A8E8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2.5"
-              />
-
-              <path
-                d="M28 17L34 22L28 27"
-                stroke="#1DF2F8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2.5"
-              />
-
-              <circle
-                cx="22"
-                cy="22"
-                fill="#1DF2F8"
-                r="2.5"
-              />
-            </svg>
+          <div className="w-10 h-10 flex items-center justify-center logo-bounce">
+            <img
+              src="/icon.svg"
+              alt="CarolaCodes"
+              className="w-full h-full object-contain"
+            />
           </div>
 
           <span className="font-extrabold text-xl tracking-tight text-white">
