@@ -1,5 +1,6 @@
 import { useLanguage } from "../../hooks/useLanguage";
 import { getCalUrl } from "../../utils/cal";
+import { Link } from "react-router-dom";
 function Hero() {
   const { t } = useLanguage();
 
@@ -41,18 +42,16 @@ function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full sm:w-auto">
-          <a
+          <Link
             className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#1DF2F8] text-[#00171F] font-bold text-sm shadow-lg shadow-cyan-500/20 hover:scale-105 hover:shadow-[0_0_36px_0px_rgba(29,242,248,0.75)] hover:-translate-y-0.5 transition-all group"
-            href="/diagnostico"
-            target="_blank"
-            rel="noopener noreferrer"
+            to="/diagnostico"
           >
             <span>{t.hero.primaryCta}</span>
 
             <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
               arrow_forward
             </span>
-          </a>
+          </Link>
 
           <a
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/[0.06] border border-white/20 text-white font-medium text-sm hover:bg-white/10 hover:scale-105 hover:-translate-y-0.5 transition-all"

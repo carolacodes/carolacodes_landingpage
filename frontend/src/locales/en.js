@@ -413,7 +413,7 @@ hero: {
     title: "Book a call",
 
     description:
-      "Let's schedule a 20-minute Google Meet to understand your project, evaluate technical feasibility and define the next steps.",
+      "Let's schedule a 30-minute to understand your project, evaluate technical feasibility and define the next steps.",
 
     button: "Choose a time",
   },

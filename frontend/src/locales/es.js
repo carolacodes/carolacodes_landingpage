@@ -413,7 +413,7 @@ hero: {
     title: "Agendar una llamada",
 
     description:
-      "Coordinemos una sesión de 20 minutos por Google Meet para conocernos, evaluar viabilidad técnica y definir los pasos a seguir.",
+      "Coordinemos una sesión de 30 minutos para conocernos, evaluar viabilidad técnica y definir los pasos a seguir.",
 
     button: "Elegir horario en agenda",
   },

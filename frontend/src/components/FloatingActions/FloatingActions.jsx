@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "../../hooks/useLanguage";
 import { createWhatsAppUrl } from "../../utils/whatsapp";
-
+import { Link } from "react-router-dom";
 function FloatingActions() {
   const { t } = useLanguage();
   const location = useLocation();
@@ -17,7 +17,6 @@ function FloatingActions() {
     t.contact.whatsapp.message
   );
 
-  const formUrl = "/diagnostico";
 
   useEffect(() => {
     let hideTimeout;
@@ -99,17 +98,15 @@ function FloatingActions() {
             </span>
           </div>
 
-          <a
-            href={formUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/diagnostico"
             aria-label={t.floating.formTitle}
             className="pointer-events-auto floating-soft flex h-16 w-16 items-center justify-center rounded-full border border-[#1DF2F8]/40 bg-[#00171F] text-[#1DF2F8] shadow-[0_0_24px_rgba(29,242,248,0.25)] transition-all duration-300 hover:scale-110 hover:shadow-[0_0_32px_rgba(29,242,248,0.55)]"
           >
             <span className="material-symbols-outlined text-[28px]">
               description
             </span>
-          </a>
+          </Link>
         </div>
       )}
 

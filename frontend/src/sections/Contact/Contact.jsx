@@ -1,6 +1,7 @@
 import { useLanguage } from "../../hooks/useLanguage";
 import { createWhatsAppUrl } from "../../utils/whatsapp";
 import { getCalUrl } from "../../utils/cal";
+import { Link } from "react-router-dom";
 function Contact() {
   const { t } = useLanguage();
 
@@ -58,18 +59,16 @@ function Contact() {
               </p>
             </div>
 
-            <a
+            <Link
               className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all hover:scale-105"
-              href="/diagnostico"
-              target="_blank"
-              rel="noopener noreferrer"
+              to="/diagnostico"
             >
               <span>{t.contact.diagnostic.button}</span>
 
               <span className="material-symbols-outlined text-[18px]">
                 open_in_new
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Call */}
